@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://bkjgfrnnklt48"]
+
+[ext_resource type="Script" uid="uid://du8k4gee7rd8j" path="res://ui/log_message.gd" id="1_ypi0c"]
+
+[node name="LogMessage" type="HBoxContainer"]
+offset_right = 128.0
+offset_bottom = 23.0
+theme_override_constants/separation = 6
+script = ExtResource("1_ypi0c")
+
+[node name="Icon" type="Label" parent="."]
+layout_mode = 2
+text = "[ ! ]"
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+text = "bcvbcvbvcbc"
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
