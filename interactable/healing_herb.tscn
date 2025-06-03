@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://cwtjq7pgp53xq"]
+
+[ext_resource type="PackedScene" uid="uid://cek1q2bbu4ahb" path="res://interactable/interactable.tscn" id="1_4t4nm"]
+[ext_resource type="Script" uid="uid://gw0fihe4x0np" path="res://interactable/collectable_herb.gd" id="2_4t4nm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i04op"]
+size = Vector2(32, 56)
+
+[node name="HealingHerb" instance=ExtResource("1_4t4nm")]
+script = ExtResource("2_4t4nm")
+
+[node name="ColorRect" type="ColorRect" parent="." index="1"]
+offset_right = 16.0
+offset_bottom = 40.0
+color = Color(2.26215e-06, 0.867794, 0.285096, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="2"]
+position = Vector2(8, 20)
+shape = SubResource("RectangleShape2D_i04op")

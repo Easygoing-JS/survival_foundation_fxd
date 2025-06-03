@@ -15,6 +15,17 @@ var items = {
 		"description": "A fresh red apple. Restores a bit of health.",
 		"stackable": true,
 		"actions": ["eat"]
+	},
+	"healing_herb": {
+		"name": "Healing Herb",
+		"description": "Restores a small amount of health.",
+		"stackable": true,
+		"actions": ["use"],
+		"effects": [{
+				"type": "heal",
+				 "amount": 20
+				}
+		]
 	}
 }
 

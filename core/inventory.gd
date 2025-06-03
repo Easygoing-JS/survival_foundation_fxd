@@ -20,7 +20,6 @@ func add_item(item_id: String, amount: int = 1) -> void:
 			items[unique_id] = 1
 
 	emit_signal("updated")
-	log_ui.add_message("Picked up: " + item_id, "info")
 
 func remove_item(item_id: String, amount: int = 1) -> void:
 	if not items.has(item_id):
@@ -31,6 +30,25 @@ func remove_item(item_id: String, amount: int = 1) -> void:
 		items.erase(item_id)
 
 	emit_signal("updated")
+
+func use_item(item_id: String) -> void:
+	var item_data = item_database.get_item_data(item_id)
+	if item_data.is_empty():
+		return
+
+	if item_data.has("effects"):
+		for effect in item_data.effects:
+			_apply_effect(effect)
+
+	remove_item(item_id, 1)
+
+func _apply_effect(effect: Dictionary) -> void:
+	match effect.get("type", ""):
+		"heal":
+			var amount = effect.get("amount", 0)
+			log_ui.add_message("You recovered " + str(amount) + " HP.", "info")
+		_:
+			log_ui.add_message("Unknown effect type: " + str(effect.get("type")), "warning")
 
 func get_items() -> Dictionary:
 	return items
@@ -56,8 +74,17 @@ func get_items() -> Dictionary:
 			#items[unique_id] = 1
 #
 	#emit_signal("updated")
-	#log_ui.add_message("Picked up: " + item_id + " x" + str(amount), "info")
+	#log_ui.add_message("Picked up: " + item_id, "info")
 #
+#func remove_item(item_id: String, amount: int = 1) -> void:
+	#if not items.has(item_id):
+		#return
+#
+	#items[item_id] -= amount
+	#if items[item_id] <= 0:
+		#items.erase(item_id)
+#
+	#emit_signal("updated")
 #
 #func get_items() -> Dictionary:
 	#return items

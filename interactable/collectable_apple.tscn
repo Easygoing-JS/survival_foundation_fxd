@@ -4,16 +4,16 @@
 [ext_resource type="Script" uid="uid://72645itnwouj" path="res://interactable/collectable_apple.gd" id="2_kb737"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i04op"]
-size = Vector2(56, 56)
+size = Vector2(40, 40)
 
 [node name="CollectableApple" instance=ExtResource("1_i04op")]
 script = ExtResource("2_kb737")
 
 [node name="ColorRect" type="ColorRect" parent="." index="1"]
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 24.0
+offset_bottom = 24.0
 color = Color(2.26215e-06, 0.867794, 0.285096, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="2"]
-position = Vector2(20, 20)
+position = Vector2(12, 12)
 shape = SubResource("RectangleShape2D_i04op")
