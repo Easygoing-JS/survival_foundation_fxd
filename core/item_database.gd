@@ -12,7 +12,7 @@ var items = {
 	},
 	"apple": {
 		"name": "Apple",
-		"description": "A juicy apple. Restores some health.",
+		"description": "A fresh red apple. Restores a bit of health.",
 		"stackable": true,
 		"actions": ["eat"]
 	}

@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://xmi32jpv4cyl"]
+
+[ext_resource type="PackedScene" uid="uid://cek1q2bbu4ahb" path="res://interactable/interactable.tscn" id="1_i04op"]
+[ext_resource type="Script" uid="uid://72645itnwouj" path="res://interactable/collectable_apple.gd" id="2_kb737"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i04op"]
+size = Vector2(56, 56)
+
+[node name="CollectableApple" instance=ExtResource("1_i04op")]
+script = ExtResource("2_kb737")
+
+[node name="ColorRect" type="ColorRect" parent="." index="1"]
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(2.26215e-06, 0.867794, 0.285096, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="2"]
+position = Vector2(20, 20)
+shape = SubResource("RectangleShape2D_i04op")

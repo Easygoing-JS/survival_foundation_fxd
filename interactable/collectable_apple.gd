@@ -1,4 +1,4 @@
-# collectable_branch.gd
+# collectable_apple.gd
 
 extends "res://interactable/interactable.gd"
 
@@ -8,5 +8,5 @@ func _ready():
 		interacted.connect(_on_interacted)
 
 func _on_interacted():
-	inventory.add_item("branch")
+	inventory.add_item("apple")
 	queue_free()
